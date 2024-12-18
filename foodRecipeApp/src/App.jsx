@@ -1,7 +1,11 @@
-import { useState } from "react";
+import { SearchComponent } from "./Components/SearchComponents";
 
 function App() {
-  return <div className="App"></div>;
+  return (
+    <div className="App">
+      <SearchComponent />
+    </div>
+  );
 }
 
 export default App;
