@@ -1,7 +1,8 @@
 import { useEffect, useState } from "react";
 import styles from "../css/search.module.css";
 const url = "https://api.spoonacular.com/recipes/complexSearch";
-const API_KEY = "9f601c1d559d4d4b9dff464e4b513b00";
+const API_KEY = "3123cc3661734b41bc557c7fbb978444";
+import demoResponse from "../DemoSearch.json";
 
 export function SearchComponent({ foodData, setFoodData }) {
   const [query, setQuery] = useState("Pizza");
@@ -9,6 +10,7 @@ export function SearchComponent({ foodData, setFoodData }) {
     async function fetchFood() {
       const response = await fetch(`${url}?query=${query}&apiKey=${API_KEY}`);
       const jsonData = await response.json();
+      //const jsonData = demoResponse;
       setFoodData(jsonData.results);
     }
     fetchFood();
